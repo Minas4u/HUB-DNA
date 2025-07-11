@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RNA Running Team</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        /* Using Inter font family */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #000000;
+            color: #f5f5f4; /* Using Tailwind's stone-100 as cream */
+        }
+        /* Custom scrollbar for a more modern look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #000;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #0284c7;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #f59e0b;
+        }
+        /* Simple animation for sections */
+        .section-fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .section-fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-black text-stone-200">
+
+    <!-- Header and Navigation -->
+    <header class="bg-black/80 backdrop-blur-sm sticky top-0 z-40 border-b border-stone-800">
+        <nav class="container mx-auto px-6 py-2 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="#intro">
+                <img id="site_logo" src="assets/pictures/rna_logo.png" alt="RNA Logo" class="h-16 w-auto" onerror="this.onerror=null;this.src='https://placehold.co/200x100/000000/FFFFFF?text=RNA';">
+            </a>
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden flex items-center space-x-4">
+                <a href="https://minas4u.github.io/DNA/" class="bg-sky-600 hover:bg-sky-700 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-300 text-sm">DNA</a>
+                <button id="menu-btn" class="text-stone-200 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#intro" class="hover:text-sky-600 transition-colors duration-300">Intro</a>
+                <a href="#guide" class="hover:text-sky-600 transition-colors duration-300">Guide</a>
+                <a href="#info" class="hover:text-sky-600 transition-colors duration-300">Info</a>
+                <a href="https://minas4u.github.io/DNA/" id="nav_dna_button" class="bg-sky-600 hover:bg-sky-700 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-300">DNA</a>
+            </div>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden">
+            <a href="#intro" class="block py-2 px-6 text-sm hover:bg-stone-900">Intro</a>
+            <a href="#guide" class="block py-2 px-6 text-sm hover:bg-stone-900">Guide</a>
+            <a href="#info" class="block py-2 px-6 text-sm hover:bg-stone-900">Info</a>
+            <a href="https://minas4u.github.io/DNA/" class="block py-2 px-6 text-sm hover:bg-stone-900">DNA</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6">
+        
+        <!-- Intro Section -->
+        <section id="intro" class="py-20 md:py-32 section-fade-in">
+            <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-4xl md:text-5xl font-black tracking-tighter mb-4">Welcome to the App</h2>
+                    <p class="text-lg text-stone-400">This is a brief and engaging introduction to our application. It highlights the main purpose and invites users to explore its features.</p>
+                </div>
+                <div>
+                    <!-- You can replace this placeholder with your image -->
+                    <img src="https://placehold.co/600x400/0284c7/f5f5f4?text=App+Screenshot" alt="App Preview" class="rounded-lg shadow-2xl">
+                </div>
+            </div>
+        </section>
+
+        <!-- Guide Section -->
+        <section id="guide" class="py-20 md:py-32 section-fade-in">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-4xl md:text-6xl font-black tracking-tighter mb-12">How to Use the App</h2>
+                <div class="grid md:grid-cols-3 gap-8 text-left">
+                    <div class="bg-stone-900/50 p-6 rounded-lg border border-stone-800">
+                        <h3 class="text-2xl font-bold mb-3 text-sky-600">What It Does</h3>
+                        <p class="text-stone-400">This section explains the core functionality of the app. Describe what problems it solves or what value it provides to the user.</p>
+                    </div>
+                    <div class="bg-stone-900/50 p-6 rounded-lg border border-stone-800">
+                        <h3 class="text-2xl font-bold mb-3 text-sky-600">How It Works</h3>
+                        <p class="text-stone-400">Provide a step-by-step explanation of how to use the main features. Keep it simple and easy to follow.</p>
+                    </div>
+                    <div class="bg-stone-900/50 p-6 rounded-lg border border-stone-800">
+                        <h3 class="text-2xl font-bold mb-3 text-sky-600">Installation</h3>
+                        <p class="text-stone-400">Give clear instructions on how to install the application on different platforms (e.g., download from the App Store, install from a website).</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Info Section -->
+        <section id="info" class="py-20 md:py-32 section-fade-in">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-4xl md:text-6xl font-black tracking-tighter mb-8">More Information</h2>
+                <p class="text-lg text-stone-400 max-w-3xl mx-auto">Here you can add any additional details, such as contact information, links to documentation, privacy policy, or frequently asked questions.</p>
+            </div>
+        </section>
+
+        <!-- Enter DNA Button Section -->
+        <section id="enter-dna" class="py-20 text-center section-fade-in">
+             <a href="https://minas4u.github.io/DNA/" class="inline-block bg-sky-600 hover:bg-sky-700 text-white font-bold py-4 px-8 rounded-lg text-xl transition-colors duration-300">Enter DNA</a>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-stone-800 mt-20">
+        <div class="container mx-auto px-6 py-8 text-center text-stone-500">
+            <p>© 2025 RNA Running. All Rights Reserved.</p>
+            <p class="text-sm mt-2">Designed with <span class='text-sky-600'>&hearts;</span></p>
+        </div>
+    </footer>
+
+    <script>
+        // --- START: PAGE INTERACTIVITY ---
+
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when a link is clicked
+        const mobileLinks = mobileMenu.getElementsByTagName('a');
+        for (let link of mobileLinks) {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        }
+        
+        // Intersection Observer for section animations
+        const sections = document.querySelectorAll('.section-fade-in');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+        // --- END: PAGE INTERACTIVITY ---
+
+        // --- START: INITIALIZATION ---
+        // No population script needed as content is now directly in HTML.
+        // --- END: INITIALIZATION ---
+    </script>
+</body>
+</html>
